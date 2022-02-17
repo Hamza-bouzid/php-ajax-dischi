@@ -1,5 +1,5 @@
-
 <?php 
+
 $database = [
   [
       'title' => 'New Jersey',
@@ -73,46 +73,8 @@ $database = [
   ]
 ];
 
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+echo json_encode($database);
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>Milestone 1</title>
-</head>
-<body>
- <header>
-    <div class="logo">
-      <img src="img/logo-small.svg" alt="Logo" />
-    </div>
-  </header>
-
-  <main>
-  <div class="container">
-    <div class="dischi">
-      <?php 
-      foreach($database as $disco) {
-        echo "<div class='disco'>" .
-        "<img src='$disco[poster]'/>" .
-        "<h3>". $disco[title] . "</h3>" .
-        "<h4>". $disco[author] . "</h4>" .
-        "<h4>". $disco[year] . "</h4>" .
-        "</div>" ;
-      };
-      
-      ?>
-    </div>
-  </div>
-  </main>
-
-  
-</body>
-</html>
