@@ -73,8 +73,20 @@ $database = [
   ]
 ];
 
+$filtroGenere = $_GET["genere"];
+
+$databaseFiltrato = [];
+
+foreach ($database as  $value) {
+    if( strpos($filtroGenere, strtolower( $value['genre'] )) !== false) {
+        $databaseFiltrato[] = $value;
+    } elseif( $filtroGenere == null) {
+        $databaseFiltrato[] = $value;
+    }
+};
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-echo json_encode($database);
+echo json_encode($databaseFiltrato);
 
 ?>
