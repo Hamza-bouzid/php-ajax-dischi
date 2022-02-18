@@ -78,7 +78,7 @@ $filtroGenere = $_GET["genere"];
 $databaseFiltrato = [];
 
 foreach ($database as  $value) {
-    if( strpos($filtroGenere, strtolower( $value['genre'] )) !== false) {
+    if( stripos($filtroGenere, strtolower( $value['genre'] )) !== false) {
         $databaseFiltrato[] = $value;
     } elseif( $filtroGenere == null) {
         $databaseFiltrato[] = $value;
